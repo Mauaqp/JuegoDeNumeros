@@ -7,26 +7,23 @@ app.secret_key = "estoessecreto"
 #Ruta index
 @app.route('/')
 def index():
-    ran = random.randint(1,100)
-    print("El numero aleatorio es " + str(ran))
-    session["ran"] = ran
+    if "ran" not in session:
+        session["ran"] = random.randint(1,100)
+    print("El numero aleatorio es " + str(session["ran"]))
     return render_template("index.html")
 
 #Ruta guess
 @app.route('/guess',methods=['POST'])
-def guessNum():
-    guess = {
-        "numero" : request.form["numero"]
-    }
-    session["numero"] = int(request.form["numero"])
+def guess():
+    session['numero'] = int(request.form['numero'])
+    return redirect('/')
 
-    if guess["numero"] == session["ran"]:
-        print("Adivinaste")
-        
-    else:
-        print("No adivinaste")
+#Ruta reset
+@app.route('/reset')
+def reset():
+    session.clear()
     return redirect('/')
 
 #app.run
-if __name__=="__main__":   
-    app.run(debug=True)    
+if __name__=="__main__":
+    app.run(debug=True)

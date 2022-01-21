@@ -22,11 +22,37 @@ h3 {
     text-align: center;
 }
 
+.box-1 {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
 .box-2 {
     width: 30%;
     display: flex;
     flex-direction: column;
     margin: auto;
     text-align: center;
+    padding: 20px;
+}
+
+.num-correcto {
+    background-color: green;
+    color: white;
+    padding: 20px;
+}
+
+.num-bajo {
+    background-color: lightblue;
+    padding: 20px;
+}
+
+.num-alto {
+    background-color: red;
+    color: white;
     padding: 20px;
 }

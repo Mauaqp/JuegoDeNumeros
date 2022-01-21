@@ -13,9 +13,28 @@
     <div class="container">
         <div class="box-1">
             <p>Resultado</p>
+            <div>
+                {% if 'numero' in session: %}
+                    {% if session['numero'] == session['ran'] %}
+                        <div class="num-correcto">
+                            <h2>You got the number!</h2>
+                            <a href="/reset">Juega Nuevamente</a>
+                        </div>
+                    {% elif session['numero'] < session['ran'] %}
+                        <div class="num-bajo">
+                            <h2>Tu número es muy BAJO</h2>
+                        </div>
+                    {% else %}
+                        <div class="num-alto">
+                            <h2>Tu número es muy ALTO</h2>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
         </div>
         <div class="box-2">
             <p>Escribe un número!</p>
+
             <form action="/guess" method="POST">
                 <input type="number" id="numero" name="numero" min="1" max="100">
                 <button type="submit">Adivina</button>
