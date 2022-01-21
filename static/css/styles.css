@@ -1,0 +1,32 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    margin: auto;
+    text-align: center;
+}
+
+h1 span {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, red);
+    color: white;
+}
+
+h3 {
+    margin: 20px;
+    text-align: center;
+}
+
+.container {
+    margin: auto;
+    text-align: center;
+}
+
+.box-2 {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}

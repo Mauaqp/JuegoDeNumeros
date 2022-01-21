@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Bienvenido al Gran Juego de los <span>Números</span></h1>
+    <h3>Estoy pensando en un número entre el 1 y el 100</h3>
+    <div class="container">
+        <div class="box-1">
+            <p>Resultado</p>
+        </div>
+        <div class="box-2">
+            <p>Escribe un número!</p>
+            <form action="/guess" method="POST">
+                <input type="number" id="numero" name="numero" min="1" max="100">
+                <button type="submit">Adivina</button>
+            </form>
+
+
+
+        </div>
+    </div>
+</body>
+</html>
